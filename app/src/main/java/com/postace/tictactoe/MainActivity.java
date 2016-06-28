@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     boolean gameOver = false;       // game over when full board or some one won
     int[] boardState = {0, 0, 0, 0, 0, 0, 0, 0, 0};
     int[][] winningPositions = {{0, 1, 2}, {3, 4, 5}, {6, 7, 8},
-            {0, 3, 6}, {1, 4, 7}, {2, 5, 8}, {0, 4, 7}, {2, 4, 6}};
+            {0, 3, 6}, {1, 4, 7}, {2, 5, 8}, {0, 4, 8}, {2, 4, 6}};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
