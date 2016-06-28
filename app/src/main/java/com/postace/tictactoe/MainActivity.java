@@ -13,8 +13,8 @@ public class MainActivity extends AppCompatActivity {
     int activePlayer = 1;           // 1 = yellow, 2 = red
     boolean gameOver = false;       // game over when full board or some one won
     int[] boardState = {0, 0, 0, 0, 0, 0, 0, 0, 0};
-    int[][] winningPositions = {{0,1,2}, {3,4,5}, {6,7,8},
-                            {0,3,6}, {1,4,7},{2,5,8}, {0,4,7}, {2,4,6}};
+    int[][] winningPositions = {{0, 1, 2}, {3, 4, 5}, {6, 7, 8},
+            {0, 3, 6}, {1, 4, 7}, {2, 5, 8}, {0, 4, 7}, {2, 4, 6}};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,9 +32,11 @@ public class MainActivity extends AppCompatActivity {
         String playerName = null;
         switch (activePlayer) {
             case 1:
-                playerName = "Yellow"; break;
+                playerName = "Yellow";
+                break;
             case 2:
-                playerName = "Red"; break;
+                playerName = "Red";
+                break;
         }
 
         // image has not set
@@ -45,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
             if (activePlayer == 1) {
                 image.setImageResource(R.drawable.yellow);
                 activePlayer = 2;
-            } else if (activePlayer == 2){
+            } else if (activePlayer == 2) {
                 image.setImageResource(R.drawable.red);
                 activePlayer = 1;
             }
@@ -63,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 boolean boardFull = true;
-                for (int countState: boardState) {
+                for (int countState : boardState) {
                     if (countState == 0) boardFull = false;
                 }
                 // if the board already full
@@ -79,13 +81,13 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    // reset board game
+    // reset game
     public void playAgain(View view) {
 
         // Clear the board game
         GridLayout layout = (GridLayout) findViewById(R.id.layout_board_game);
-        for (int i=0; i<layout.getChildCount(); i++) {
-            ((ImageView)layout.getChildAt(i)).setImageResource(0);
+        for (int i = 0; i < layout.getChildCount(); i++) {
+            ((ImageView) layout.getChildAt(i)).setImageResource(0);
         }
 
         // new game so game is not over
@@ -95,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
         activePlayer = 1;
 
         // reset board game
-        for (int i=0;i<boardState.length;i++) {
+        for (int i = 0; i < boardState.length; i++) {
             boardState[i] = 0;
         }
 
